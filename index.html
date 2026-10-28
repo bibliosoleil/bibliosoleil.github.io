@@ -393,6 +393,42 @@ render();
     SUPABASE_URL,
     SUPABASE_PUBLISHABLE_KEY
   );
+const loginDlg = document.getElementById("loginDlg");
+
+document.getElementById("loginBtn").onclick = function () {
+  loginDlg.showModal();
+};
+
+document.getElementById("closeLogin").onclick = function () {
+  loginDlg.close();
+};
+
+document.getElementById("loginForm").onsubmit = async function (e) {
+  e.preventDefault();
+
+  const email = document.getElementById("loginEmail").value.trim();
+  const password = document.getElementById("loginPassword").value;
+  const msg = document.getElementById("loginMsg");
+
+  msg.textContent = "Logging in...";
+
+  const { data, error } = await supabaseClient.auth.signInWithPassword({
+    email,
+    password
+  });
+
+  if (error) {
+    msg.textContent = "Login failed. Check your email and password.";
+    console.error(error.message);
+    return;
+  }
+
+  msg.textContent = "Login successful!";
+  document.getElementById("loginBtn").textContent = "Logged in";
+  loginDlg.close();
+  document.getElementById("loginPassword").value = "";
+};
+
 
   console.log("Supabase client siap digunakan");
   async function testBooksConnection() {
