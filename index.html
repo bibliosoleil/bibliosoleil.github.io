@@ -395,9 +395,16 @@ render();
   );
 const loginDlg = document.getElementById("loginDlg");
 
-document.getElementById("loginBtn").onclick = function () {
-  loginDlg.showModal();
-};
+document.addEventListener("DOMContentLoaded", function () {
+  const loginBtn = document.getElementById("loginBtn");
+  const loginDlg = document.getElementById("loginDlg");
+
+  if (loginBtn && loginDlg) {
+    loginBtn.addEventListener("click", function () {
+      loginDlg.showModal();
+    });
+  }
+});
 
 document.getElementById("closeLogin").onclick = function () {
   loginDlg.close();
