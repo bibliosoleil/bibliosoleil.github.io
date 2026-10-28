@@ -368,6 +368,20 @@ render();
   );
 
   console.log("Supabase client siap digunakan");
+  async function testBooksConnection() {
+  const { data, error } = await supabaseClient
+    .from("books")
+    .select("id, title")
+    .limit(1);
+
+  if (error) {
+    console.error("Tes database gagal:", error.message);
+  } else {
+    console.log("Tes database berhasil!", data);
+  }
+}
+
+testBooksConnection();
 </script>
 </body>
 </html>
