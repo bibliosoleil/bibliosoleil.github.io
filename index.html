@@ -186,6 +186,30 @@ footer em{font-family:Fraunces,serif}
 </div>
 </section>
 
+<dialog id="loginDlg">
+  <h2>Welcome back, mama</h2>
+  <p class="sub">Log in to manage your bookshelf.</p>
+
+  <form id="loginForm">
+    <div class="f">
+      <label for="loginEmail">Email</label>
+      <input id="loginEmail" type="email" required autocomplete="username">
+    </div>
+
+    <div class="f">
+      <label for="loginPassword">Password</label>
+      <input id="loginPassword" type="password" required autocomplete="current-password">
+    </div>
+
+    <p id="loginMsg" class="sub" role="status"></p>
+
+    <div class="acts">
+      <button class="btn" type="submit">Log in</button>
+      <button class="ghost" id="closeLogin" type="button">Cancel</button>
+    </div>
+  </form>
+</dialog>
+
 <dialog id="dlg"><p id="dMsg"></p><input id="dIn" type="text" maxlength="200"><div class="acts" style="margin-top:14px"><button class="btn" id="dOk" type="button">OK</button><button class="ghost" id="dNo" type="button">Cancel</button></div></dialog>
 <footer>
 <svg viewBox="0 0 160 40" aria-hidden="true" style="display:block;width:130px;height:auto;margin:0 auto 10px"><g stroke="#9aab8c" stroke-width="2" fill="none" stroke-linecap="round"><path d="M22 40C22 34 22 30 22 26"/><path d="M80 40C80 32 80 28 80 22"/><path d="M138 40C138 34 138 30 138 26"/></g><use href="#fl" x="11" y="14" width="22" height="22" style="color:var(--rose)"/><use href="#fl" x="64" y="4" width="32" height="32" style="color:var(--mauve)"/><use href="#fl" x="127" y="14" width="22" height="22" style="color:var(--rose-d)"/></svg>
