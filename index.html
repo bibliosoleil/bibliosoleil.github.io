@@ -355,5 +355,19 @@ save();$("bk").value="";render();bkMsg("Restored "+S.books.length+" books.")},tr
 $("reset").onclick=function(){ask("Delete all books and goals? This can’t be undone.","",function(){S={books:[]};save();render()},true)};
 render();
 </script>
+  <!-- Supabase JavaScript SDK -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+  const SUPABASE_URL = "https://zkrxajesmqrmecfoherg.supabase.co";
+  const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_TrGF_136RQUyVrBi6lU7Sg_xXvh67Hk";
+
+  const supabaseClient = window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_PUBLISHABLE_KEY
+  );
+
+  console.log("Supabase client siap digunakan");
+</script>
 </body>
 </html>
